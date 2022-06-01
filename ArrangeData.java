@@ -1,3 +1,5 @@
+import javafx.util.Pair;
+
 import java.util.ArrayList;
 
 public class ArrangeData {
@@ -32,20 +34,28 @@ public class ArrangeData {
         }
     }
 
-    ArrayList<ArrayList<ArrayList<String>>> getDirection(ArrayList<ArrayList<ArrayList<String>>> fullData) {
-        ArrayList<ArrayList<ArrayList<String>>> arrangedData = new ArrayList<>();
+    ArrayList<ArrayList<Pair<String, String>>> getDirection(ArrayList<ArrayList<ArrayList<String>>> fullData) {
+        ArrayList<ArrayList<Pair<String, String>>> arrangedData = new ArrayList<>();
 
         for (int i = 0 ; i < ReadExcel.apis ; i++) {
-            ArrayList<ArrayList<String>> tempArray1 = new ArrayList<>();
-            for (int e = 0 ; e < numberOfObjectsEachAPI.get(i) ; e++) {
-                ArrayList<String> tempArray2 = new ArrayList<>();
+
+                ArrayList<Pair<String, String>> tempArray1 = new ArrayList<>();
                 for (int j = 1 ; j < fullData.get(i).size() ; j++) { // j = 1 to ignore first row
-                    String tempString1 = fullData.get(i).get(j).get(0);
-                    tempArray2.add(tempString1);
+                    String tempString1 = fullData.get(i).get(j).get(1);
+
+                    int index = 0;
+                    for (int k = tempString1.length() - 1 ; k >= 0 ; k--) {
+                        if(tempString1.charAt(k) == '/') {
+                            index = k+1;
+                            break;
+                        }
+                    }
+                    tempString1 = tempString1.substring(index);
+                    String tempString2 = fullData.get(i).get(j).get(0);
+                    Pair<String, String> tempPair = new Pair<>(tempString1, tempString2);
+                    tempArray1.add(tempPair);
                 }
-                tempArray1.add(tempArray2);
-            }
-            arrangedData.add(tempArray1);
+                arrangedData.add(tempArray1);
         }
         return arrangedData;
     }
@@ -97,43 +107,55 @@ public class ArrangeData {
     }
 
 
-    ArrayList<ArrayList<ArrayList<String>>> getAllowedValues(ArrayList<ArrayList<ArrayList<String>>> fullData) {
-        ArrayList<ArrayList<ArrayList<String>>> arrangedData = new ArrayList<>();
+    ArrayList<ArrayList<Pair<String, String>>> getAllowedValues(ArrayList<ArrayList<ArrayList<String>>> fullData) {
+        ArrayList<ArrayList<Pair<String, String>>> arrangedData = new ArrayList<>();
 
         for (int i = 0 ; i < ReadExcel.apis ; i++) {
-            ArrayList<ArrayList<String>> tempArray1 = new ArrayList<>();
-            for (int e = 0 ; e < numberOfObjectsEachAPI.get(i) ; e++) {
-                ArrayList<String> tempArray2 = new ArrayList<>();
-                for (int j = 1 ; j < fullData.get(i).size() ; j++) { // j = 1 to ignore first row
-                    String tempString1 = fullData.get(i).get(j).get(3);
-                    if(tempString1.equals("")) {
-                        tempArray2.add("All Values are Allowed");
-                    }
-                    else {
-                        tempArray2.add(tempString1);
+
+            ArrayList<Pair<String, String>> tempArray1 = new ArrayList<>();
+            for (int j = 1 ; j < fullData.get(i).size() ; j++) { // j = 1 to ignore first row
+                String tempString1 = fullData.get(i).get(j).get(1);
+
+                int index = 0;
+                for (int k = tempString1.length() - 1 ; k >= 0 ; k--) {
+                    if(tempString1.charAt(k) == '/') {
+                        index = k+1;
+                        break;
                     }
                 }
-                tempArray1.add(tempArray2);
+                tempString1 = tempString1.substring(index);
+                String tempString2 = fullData.get(i).get(j).get(3);
+                if(tempString2.equals("")) {
+                    tempString2 = "No Restriction";
+                }
+                Pair<String, String> tempPair = new Pair<>(tempString1, tempString2);
+                tempArray1.add(tempPair);
             }
             arrangedData.add(tempArray1);
         }
         return arrangedData;
     }
 
-    ArrayList<ArrayList<ArrayList<String>>> getState(ArrayList<ArrayList<ArrayList<String>>> fullData) {
-        ArrayList<ArrayList<ArrayList<String>>> arrangedData = new ArrayList<>();
+    ArrayList<ArrayList<Pair<String, String>>> getState(ArrayList<ArrayList<ArrayList<String>>> fullData) {
+        ArrayList<ArrayList<Pair<String, String>>> arrangedData = new ArrayList<>();
 
         for (int i = 0 ; i < ReadExcel.apis ; i++) {
-            ArrayList<ArrayList<String>> tempArray1 = new ArrayList<>();
-            for (int e = 0 ; e < numberOfObjectsEachAPI.get(i) ; e++) {
-                ArrayList<String> tempArray2 = new ArrayList<>();
-                for (int j = 1 ; j < fullData.get(i).size() ; j++) { // j = 1 to ignore first row
-                    String tempString1 = fullData.get(i).get(j).get(4);
 
-                    tempArray2.add(tempString1);
+            ArrayList<Pair<String, String>> tempArray1 = new ArrayList<>();
+            for (int j = 1 ; j < fullData.get(i).size() ; j++) { // j = 1 to ignore first row
+                String tempString1 = fullData.get(i).get(j).get(1);
 
+                int index = 0;
+                for (int k = tempString1.length() - 1 ; k >= 0 ; k--) {
+                    if(tempString1.charAt(k) == '/') {
+                        index = k+1;
+                        break;
+                    }
                 }
-                tempArray1.add(tempArray2);
+                tempString1 = tempString1.substring(index);
+                String tempString2 = fullData.get(i).get(j).get(4);
+                Pair<String, String> tempPair = new Pair<>(tempString1, tempString2);
+                tempArray1.add(tempPair);
             }
             arrangedData.add(tempArray1);
         }
