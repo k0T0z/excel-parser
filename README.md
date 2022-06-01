@@ -26,3 +26,31 @@ Sample Output of ReadExcel Class
 [O, /object5, object5, , N]
 [O, /object5/field15, string, , Y]
 ```
+
+Sample Output of ArrangeData Class
+
+```
+[I, I, I, I, I, I, I, I, I, I, I, I, I, I, O, O, O, O, O, O, O]
+[I, I, I, I, I, I, I, I, I, I, I, I, I, I, O, O, O, O, O, O, O]
+[I, I, I, I, I, I, I, I, I, I, I, I, I, I, O, O, O, O, O, O, O]
+[I, I, I, I, I, I, I, I, I, I, I, I, I, I, O, O, O, O, O, O, O]
+[I, I, I, I, I, I, I, I, I, I, I, I, I, I, O, O, O, O, O, O, O]
+
+[field1, field2, field3, field4, object2]
+[field5, field6, field7, field8, field9, field10, field11]
+[field12, object4]
+[field13, field14]
+[field15]
+
+[All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, 1,2,3, Y,N, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, 0,1, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed]
+[All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, 1,2,3, Y,N, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, 0,1, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed]
+[All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, 1,2,3, Y,N, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, 0,1, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed]
+[All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, 1,2,3, Y,N, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, 0,1, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed]
+[All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, 1,2,3, Y,N, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, 0,1, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed, All Values are Allowed]
+
+[Y, Y, Y, Y, N, Y, N, N, N, N, N, Y, Y, Y, Y, Y, Y, Y, Y, N, Y]
+[Y, Y, Y, Y, N, Y, N, N, N, N, N, Y, Y, Y, Y, Y, Y, Y, Y, N, Y]
+[Y, Y, Y, Y, N, Y, N, N, N, N, N, Y, Y, Y, Y, Y, Y, Y, Y, N, Y]
+[Y, Y, Y, Y, N, Y, N, N, N, N, N, Y, Y, Y, Y, Y, Y, Y, Y, N, Y]
+[Y, Y, Y, Y, N, Y, N, N, N, N, N, Y, Y, Y, Y, Y, Y, Y, Y, N, Y]
+```
