@@ -1,3 +1,5 @@
+import javafx.util.Pair;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -9,13 +11,12 @@ public class ArrangeDataTest {
 
         ArrangeData arrangeData = new ArrangeData(b);
 
-        ArrayList<ArrayList<ArrayList<String>>> e = arrangeData.getDirection(b);
-        for (ArrayList<ArrayList<String>> x : e) {
-            for (ArrayList<String> y : x) {
-                System.out.println(y);
-            }
-            System.out.println();
+        ArrayList<ArrayList<Pair<String, String>>> e = arrangeData.getDirection(b);
+        for (ArrayList<Pair<String, String>> x : e) {
+            System.out.println(x);
         }
+
+        System.out.println();
 
         ArrayList<ArrayList<ArrayList<String>>> c = arrangeData.getArrangedData(b);
         for (ArrayList<ArrayList<String>> x : c) {
@@ -24,21 +25,20 @@ public class ArrangeDataTest {
             }
             System.out.println();
         }
-        ArrayList<ArrayList<ArrayList<String>>> d = arrangeData.getAllowedValues(b);
-        for (ArrayList<ArrayList<String>> x : d) {
-            for (ArrayList<String> y : x) {
-                System.out.println(y);
-            }
-            System.out.println();
+
+        ArrayList<ArrayList<Pair<String, String>>> d = arrangeData.getAllowedValues(b);
+        for (ArrayList<Pair<String, String>> x : d) {
+            System.out.println(x);
         }
 
-        ArrayList<ArrayList<ArrayList<String>>> f = arrangeData.getState(b);
-        for (ArrayList<ArrayList<String>> x : f) {
-            for (ArrayList<String> y : x) {
-                System.out.println(y);
-            }
-            System.out.println();
+        System.out.println();
+
+        ArrayList<ArrayList<Pair<String, String>>> f = arrangeData.getState(b);
+        for (ArrayList<Pair<String, String>> x : f) {
+            System.out.println(x);
         }
+
+        System.out.println();
 
 
     }
