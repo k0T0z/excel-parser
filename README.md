@@ -32,7 +32,6 @@ Sample Output of ArrangeData Class
 ```
 [object1=I, field1=I, field2=I, field3=I, field4=I, object2=I, field5=I, field6=I, field7=I, field8=I, field9=I, field10=I, field11=I, field12=I, object3=O, field12=O, object4=O, field13=O, field14=O, object5=O, field15=O]
 
-
 [field1, field2, field3, field4, object2]
 [field5, field6, field7, field8, field9, field10, field11]
 [field12, object4]
